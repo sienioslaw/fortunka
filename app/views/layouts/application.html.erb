@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Fortunka</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="header-container">
+		<header class="wrapper">
+			<h1 id="title">Twa Fortunka</h1>
+			<nav>
+				<ul>
+					<li><a href="#">Some</a></li>
+					<li><a href="#">navigation</a></li>
+					<li><a href="#">links</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+	<div id="main" class="wrapper">
+		<aside>
+			<h3>Losowa fortunka:</h3>
+			
+		</aside>
+		<article>
+			<header>
+				<h2>Lista fortunek</h2>
+				<p>
+					<%= yield %>
+				</p>
+				
+			</header>
+			
+			
+			<footer>
+			<h3>O autorze:</h3>
+				<p>Tu powinno sie znaleźć jakieś info odnośnie autorstwa tego szkaradztwa, ale z braku laku i chęci go tu nie będzie. Przykro mi.</p>
+			</footer>
+		</article>
+	</div>
+	<div id="footer-container">
+		<footer class="wrapper">
+			<h3>Writted by Marcin Sienkiewicz 2011. Powered by <b>Ruby on Rails 3.1</b></h3>
+		</footer>
+	</div>
+
+	
+	
+</body>	
+</html>

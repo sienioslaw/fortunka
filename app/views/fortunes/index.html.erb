@@ -1,0 +1,27 @@
+﻿
+
+<table>
+  <tr>
+    <th>Author</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fortunes.each do |fortune| %>
+  <tr>
+    <td><%= fortune.author %></td>
+    <td><%= fortune.body %></td>
+    <td><%= link_to 'Pokaż', fortune %></td>
+    <td><%= link_to 'Edytuj', edit_fortune_path(fortune) %></td>
+    <td><%= link_to 'Zniszcz', fortune, confirm: 'Jesteś pewien?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fortune', new_fortune_path %>
+
+<%= paginate @fortunes %>
