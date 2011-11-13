@@ -3,8 +3,10 @@ class FortunesController < ApplicationController
   # GET /fortunes.json
   def index
     #@fortunes = Fortune.all
-	@fortunes = Fortune.order(:author).page(params[:page]).per(10)
-    respond_to do |format|
+	#@fortunes = Fortune.order(:author).page(params[:page]).per(10)
+	@fortunes = Fortune.search(params[:search]).order(:author).page(params[:page]).per(11)
+	
+	respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @fortunes }
     end

@@ -1,9 +1,7 @@
-﻿
-
-<table>
+﻿<table>
   <tr>
-    <th>Author</th>
-    <th>Body</th>
+    <th>Autor</th>
+    <th>Cytat</th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,5 +21,14 @@
 <br />
 
 <%= link_to 'New Fortune', new_fortune_path %>
-
+<div>
 <%= paginate @fortunes %>
+</div>
+<div>
+<%= form_tag fortunes_path, :method => :get, :id => "fortunes_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+</div>
