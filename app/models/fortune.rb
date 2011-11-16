@@ -1,4 +1,6 @@
 class Fortune < ActiveRecord::Base
+	has_many :comments, :dependent => :destroy
+	
 	# atrybut: quotation
 	validates :body, :presence => true
 	# validates_presence_of :quotation
@@ -15,5 +17,7 @@ class Fortune < ActiveRecord::Base
 	else
 		scoped
 	end
-end
+	end
+	
+	 
 end

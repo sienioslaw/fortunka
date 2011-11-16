@@ -82,4 +82,13 @@ class FortunesController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def losuj
+	random_idx = rand(Fortune.count)
+	
+	@fortune = Fortune.first(:offset => random_idx)
+	
+	render 'show'
+  
+  end
 end

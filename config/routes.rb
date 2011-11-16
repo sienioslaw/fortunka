@@ -1,5 +1,14 @@
 Fortunka::Application.routes.draw do
-  resources :fortunes
+  match 'fortunes/losuj' => 'fortunes#losuj', :as => :losuj
+  
+  resources :fortunes do
+	resources :comments
+		collection do
+		get :tags
+		end
+		
+			
+	end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
