@@ -13,7 +13,7 @@
     <td><%= fortune.body %></td>
     <td><%= link_to 'Pokaż', fortune %></td>
     <td><%= link_to 'Edytuj', edit_fortune_path(fortune) %></td>
-    <td><%= link_to 'Zniszcz', fortune, confirm: 'Jesteś pewien?', method: :delete %></td>
+    <td><%= link_to 'Zniszcz', fortune, :confirm => t('helpers.data.sure'), method: :delete %></td>
   </tr>
 <% end %>
 </table>
